@@ -1,4 +1,9 @@
 # --- azurerm_vmware_cluster ---
+output "vmware_clusters_id" {
+  description = "Map of id values across all vmware_clusters, keyed the same as var.vmware_clusters"
+  value       = module.vmware_clusters.vmware_clusters_id
+}
+
 output "vmware_clusters_cluster_node_count" {
   description = "Map of cluster_node_count values across all vmware_clusters, keyed the same as var.vmware_clusters"
   value       = module.vmware_clusters.vmware_clusters_cluster_node_count
@@ -30,6 +35,11 @@ output "vmware_clusters_vmware_cloud_id" {
 }
 
 # --- azurerm_vmware_netapp_volume_attachment ---
+output "vmware_netapp_volume_attachments_id" {
+  description = "Map of id values across all vmware_netapp_volume_attachments, keyed the same as var.vmware_netapp_volume_attachments"
+  value       = module.vmware_netapp_volume_attachments.vmware_netapp_volume_attachments_id
+}
+
 output "vmware_netapp_volume_attachments_name" {
   description = "Map of name values across all vmware_netapp_volume_attachments, keyed the same as var.vmware_netapp_volume_attachments"
   value       = module.vmware_netapp_volume_attachments.vmware_netapp_volume_attachments_name
