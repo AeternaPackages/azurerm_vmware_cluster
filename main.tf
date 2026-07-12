@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.vmware_clusters : {
       for k2, v2 in coalesce(v1.vmware_netapp_volume_attachments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        vmware_cluster_id = module.vmware_clusters.vmware_clusters["${k1}"].id
+        vmware_cluster_id = module.vmware_clusters.vmware_clusters_id["${k1}"]
       })
     }
   ]...)
