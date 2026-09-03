@@ -12,12 +12,12 @@ locals {
 }
 
 module "vmware_clusters" {
-  source          = "git::https://github.com/AeternaModules/azurerm_vmware_cluster.git?ref=v5.0.0"
+  source          = "git::https://github.com/AeternaModules/azurerm_vmware_cluster.git?ref=v5.0.1"
   vmware_clusters = local.vmware_clusters
 }
 
 module "vmware_netapp_volume_attachments" {
-  source                           = "git::https://github.com/AeternaModules/azurerm_vmware_netapp_volume_attachment.git?ref=v5.0.0"
+  source                           = "git::https://github.com/AeternaModules/azurerm_vmware_netapp_volume_attachment.git?ref=v5.0.1"
   vmware_netapp_volume_attachments = local.vmware_netapp_volume_attachments
   depends_on                       = [module.vmware_clusters]
 }
